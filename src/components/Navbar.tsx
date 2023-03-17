@@ -10,6 +10,7 @@ import { FiLogOut } from "react-icons/fi";
 import { BsSearch } from "react-icons/bs";
 import { useClickOutside } from "../hooks/useClickOutside";
 import Link from "next/link";
+import { FaBars } from "react-icons/fa";
 
 export default function Navbar() {
   const inputRef = useRef(null);
@@ -46,11 +47,12 @@ export default function Navbar() {
   return (
     <div className="relative z-10">
       {/* Top Nav */}
-      <div className="h-navbar px-[30px] flex items-center justify-between border-b">
+      <div className="h-navbar px-4 lg:px-[30px] flex items-center justify-between border-b">
+        <button className="lg:hidden"><FaBars/></button>
         <Link href="/">
           <Image src="/logo.svg" width={96} height={40} alt="logo" />
         </Link>
-        <div className="flex">
+        <div className="hidden lg:flex">
           {navList.map(({ id, title, link }) => (
             <MegaMenuItem
               variant="navItem"
@@ -90,10 +92,14 @@ export default function Navbar() {
             variant="iconsButton"
             srcImg="/icon-cart-new.svg"
             link="/"
-            classNameChild="h-12 w-12 relative"
+            classNameChild="w-full h-full lg:w-12 lg:h-12 relative"
           >
-            <div className="w-4 h-4 rounded-full flex items-center justify-center absolute right-1 top-3
-             bg-blue-700 text-white text-[10px] font-bold">2</div>
+            <div
+              className="w-4 h-4 rounded-full flex items-center justify-center absolute right-1 top-2 lg:top-3
+             bg-blue-700 text-white text-[10px] font-bold"
+            >
+              2
+            </div>
           </MegaMenuItem>
           {openProfile && (
             <div className="absolute top-16 right-10 bg-white text-primary rounded-2xl z-10 p-[10px] flex flex-col w-56 border">
@@ -123,7 +129,7 @@ export default function Navbar() {
       </div>
       {/* End Top Nav */}
       {/* Bottom Nav */}
-      <div className="h-[50px] flex justify-center items-center relative mx-auto">
+      <div className="h-[50px] hidden lg:flex justify-center items-center relative mx-auto">
         {navList.map(({ id, navItemsSub, infor, srcImg, listInfo }) => (
           <div key={id} className="flex justify-center items-center">
             {navItemsSub?.map(

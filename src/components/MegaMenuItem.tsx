@@ -127,7 +127,7 @@ export default function MegaMenuItem({
       return (
         <Link
           href={link}
-          className={`"h-12 w-12 flex align-middle justify-center" ${className}`}
+          className={`"h-8 w-8 lg:w-12 h-12 flex justify-center items-center" ${className}`}
           {...props}
         >
           <Image
@@ -135,7 +135,7 @@ export default function MegaMenuItem({
             alt="icon"
             width={21}
             height={21}
-            className={classNameChild}
+            className={`${classNameChild}`}
           />
           {children}
         </Link>

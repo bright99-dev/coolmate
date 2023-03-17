@@ -44,7 +44,7 @@ export default function CardProduct() {
 
   return (
     <div className="mx-4">
-      <div className="w-[306px] h-[409px] overflow-hidden rounded-lg relative group">
+      <div className="h-auto overflow-hidden rounded-lg relative group">
         <Link href="/products/productID">
           <Image
             src="/ao.avif"
@@ -54,15 +54,15 @@ export default function CardProduct() {
             className="rounded-lg w-full h-auto"
           />
         </Link>
-        <div className="w-full flex justify-between absolute top-3 px-2 text-xs">
-          <div className="font-semibold text-sm">
-            5 * <span className="text-blue-600">(7)</span>
+        <div className="w-full flex justify-between absolute top-3 px-2 text-[8px] lg:text-sm">
+          <div className="font-semibold">
+           <span className="text-sm"> 5 *</span> <span className="text-blue-600">(7)</span>
           </div>
-          <button className="bg-lime-600 py-1 px-2 rounded text-white font-semibold">
+          <button className="bg-lime-600 py-0 px-2 rounded text-white font-semibold">
             Bán chạy
           </button>
         </div>
-        <div className="absolute bottom-5 flex-col bg-gray-300 rounded-md p-2 w-[258px] hidden group-hover:flex animate__slideInUp left-6">
+        <div className="absolute left-2/4 -translate-x-2/4 bottom-5 flex-col bg-gray-300 rounded-md p-2 w-[258px] hidden xl:group-hover:flex animate__slideInUp">
           <p className="text-primary text-sm font-bold leading-[21px] text-center mb-1">
             Thêm nhanh vào giỏ hàng +
           </p>
@@ -94,10 +94,10 @@ export default function CardProduct() {
             </div>
           ))}
         </div>
-        <Link href="" className="text-sm text-primary leading-4 mt-[9px] mb-3">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque
+        <Link href="" className="text-xs lg:text-sm text-primary leading-4 mt-[9px] mb-3">
+          Lorem ipsum dolor, sit amet consectetur
         </Link>
-        <div className="flex text-sm leading-[21px]">
+        <div className="flex text-xs lg:text-sm leading-[21px]">
           <ins className="font-bold text-[#242424]">119.000đ</ins>
           <del className="text-[#c4c4c4] mx-[14px]">289.000đ</del>
           <span className="text-[#FF0000]">-33%</span>

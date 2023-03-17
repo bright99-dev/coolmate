@@ -50,26 +50,26 @@ export default function SectionHomePageSearch() {
   const [tagInput, setTagInput] = useState("");
   
   return (
-    <div className="pt-[90px] pb-[50px] text-primary flex flex-col justify-center items-center w-[700px] mx-auto">
-      <h2 className="font-bold text-4xl leading-[54px] mb-5 flex items-center">
+    <div className="pt-[50px] lg:pt-[90px] pb-[26px] lg:pb-[50px] text-primary flex flex-col justify-center items-center w-full lg:w-2/4 mx-auto">
+      <h2 className="font-bold text-2xl lg:text-4xl leading-[54px] mb-4 lg:mb-5 flex items-center">
         Bạn tìm gì hôm nay ?
         <Image src="/mceclip1_2.webp" alt="" width={24} height={24} />
       </h2>
-      <div className="w-full h-[66px] relative">
+      <div className="w-full h-[45px] lg:h-[66px] relative px-4">
         <input
-          className="bg-eee w-full h-full rounded-full px-5 outline-none"
+          className="bg-eee w-full h-full rounded-full px-5 outline-none text-xs lg:text-base"
           type="text"
           value={tagInput}
           onChange={(e)=>setTagInput(e.target.value)}
           placeholder='Hãy thử bắt đầu với"Quần đen" xem sao '
         />
-        <CiSearch className="absolute right-5 top-2/4 -translate-y-2/4 text-3xl" />
+        <CiSearch className="absolute right-7 top-2/4 -translate-y-2/4 text-2xl lg:text-3xl" />
       </div>
-      <div className="mt-[15px] w-full">
-        <p className="text-sm text-center mb-1 font-medium">
+      <div className="mt-1 lg:mt-[15px] w-full">
+        <p className="text-sm text-center mb-2 mt-4 font-medium">
           Từ khóa nổi bật ngày hôm nay
         </p>
-        <div className="w-full flex justify-center px-3">
+        <div className="w-full flex justify-center px-3 overflow-x-auto">
           {tags?.map(({ id, title, link }) => (
             <TagItem key={id} title={title} link={link} onClick={()=>setTagInput(title)}/>
           ))}
